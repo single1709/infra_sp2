@@ -79,18 +79,3 @@ class TokenSerializer(serializers.Serializer):
             'access': str(refresh.access_token),
         }
         return data
-
-
-class UserSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = User
-        fields = (
-            'username',
-            'email',
-            'first_name',
-            'last_name',
-            'bio',
-            'role',
-        )
-        lookup_field = 'username'
