@@ -8,36 +8,38 @@ API необходим для унифицированного доступа к
 ## ENV-файл
 Файл имеет структуру:
 
-```DB_ENGINE=#######``` - указываем, что работаем с postgresql
+`DB_ENGINE=#######` - указываем, что работаем с postgresql
 
-```DB_NAME=#######``` - имя базы данных
+`DB_NAME=#######` - имя базы данных
 
-```POSTGRES_USER=#######``` - логин для подключения к базе данных
+`POSTGRES_USER=#######` - логин для подключения к базе данных
 
-```POSTGRES_PASSWORD=#######``` - пароль для подключения к БД
+`POSTGRES_PASSWORD=#######` - пароль для подключения к БД
 
-```DB_HOST=#######``` - название сервиса (контейнера)
+`DB_HOST=#######` - название сервиса (контейнера)
 
-```DB_PORT=#######``` - порт для подключения к БД 
+`DB_PORT=#######` - порт для подключения к БД 
 
 где '######' это ваши данные
 
 ## Запуск приложения в контейнерах
-Для запуска контейнеров: ```docker-compose up -d```
+Для запуска контейнеров: `docker-compose up -d`
 
 Далее выполните по очереди команды:
 
-```docker-compose exec web python manage.py migrate```
+```
+docker-compose exec web python manage.py migrate
 
-```docker-compose exec web python manage.py createsuperuser```
+docker-compose exec web python manage.py createsuperuser
 
-```docker-compose exec web python manage.py collectstatic --no-input```
+docker-compose exec web python manage.py collectstatic --no-input
+```
 
 
 ## Заполнения базы данными
 Для загрузки данных в БД используйте команду:
 
-```docker-coppose exec web python manage.py loaddata fixtures.json```
+`docker-coppose exec web python manage.py loaddata fixtures.json`
 
 ## Автор
 Сергей,
